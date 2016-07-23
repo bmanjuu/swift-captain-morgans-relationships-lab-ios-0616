@@ -9,21 +9,11 @@
 import Foundation
 import CoreData
 
-//
-//  DataStore.swift
-//  SlapChat
-//
-//  Created by Flatiron School on 7/18/16.
-//  Copyright © 2016 Flatiron School. All rights reserved.
-//
-
-import Foundation
-import CoreData
-
 class DataStore {
     
     var pirateShips:[Ship] = []
-    var recipients:[Recipient] = []
+    var pirates:[Pirate] = []
+    var engine : Engine?
     
     static let sharedDataStore = DataStore()
     
@@ -49,23 +39,19 @@ class DataStore {
         
         var error:NSError? = nil
         
-        let messagesRequest = NSFetchRequest(entityName: "Message")
-        let recipientRequest = NSFetchRequest(entityName: "Recipient")
-        
-        let createdAtSorter = NSSortDescriptor(key: "createdAt", ascending:true)
-        
-        messagesRequest.sortDescriptors = [createdAtSorter]
+        let pirateRequest = NSFetchRequest(entityName: "Pirate")
+        let shipRequest = NSFetchRequest(entityName: "Ship")
         
         do{
-            messages = try managedObjectContext.executeFetchRequest(messagesRequest) as! [Message]
-            recipients = try managedObjectContext.executeFetchRequest(recipientRequest) as! [Recipient]
+            pirates = try managedObjectContext.executeFetchRequest(pirateRequest) as! [Pirate]
+            pirateShips = try managedObjectContext.executeFetchRequest(shipRequest) as! [Ship]
         }catch let nserror1 as NSError{
             error = nserror1
-            messages = []
-            recipients = []
+            pirates = []
+            pirateShips = []
         }
         
-        if messages.count == 0 || recipients.count == 0 {
+        if pirates.count == 0 || pirateShips.count == 0 {
             generateTestData()
         }
         
@@ -74,30 +60,21 @@ class DataStore {
     
     func generateTestData() {
         
-        let messageOne: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let pirateOne: Pirate = NSEntityDescription.insertNewObjectForEntityForName("Pirate", inManagedObjectContext: managedObjectContext) as! Pirate
+        pirateOne.name = "Captain Jack Sparrow"
         
-        messageOne.content = "Message 1"
-        messageOne.createdAt = NSDate()
+        let pirateTwo : Pirate = NSEntityDescription.insertNewObjectForEntityForName("Pirate", inManagedObjectContext: managedObjectContext) as! Pirate
+        pirateTwo.name = "Davy Jones"
         
-        let messageTwo: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
         
-        messageTwo.content = "Message 2"
-        messageTwo.createdAt = NSDate()
+        let shipOne : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
+        shipOne.name = "Black Pearl"
         
-        let messageThree: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let shipTwo : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
+        shipTwo.name = "HMS Interceptor"
         
-        messageThree.content = "Message 3"
-        messageThree.createdAt = NSDate()
-        
-        let recipientOne: Recipient = NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
-        
-        recipientOne.name = "Betty"
-        recipientOne.messages = [messageOne, messageTwo]
-        
-        let recipientTwo: Recipient = NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
-        
-        recipientTwo.name = "Alice"
-        recipientTwo.messages = [messageThree]
+        let shipThree : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
+        shipThree.name = "The Flying Dutchman"
         
         
         saveContext()
