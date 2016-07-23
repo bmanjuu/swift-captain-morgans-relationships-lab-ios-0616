@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Engine" representedClassName=".Engine" syncable="YES">
+        <attribute name="propulsion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ship" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToShip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ship" inverseName="shipEngine" inverseEntity="Ship" syncable="YES"/>
+    </entity>
+    <entity name="Pirate" representedClassName=".Pirate" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ships" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pirateShips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ship" inverseName="pirateOwner" inverseEntity="Ship" syncable="YES"/>
+    </entity>
+    <entity name="Ship" representedClassName=".Ship" syncable="YES">
+        <attribute name="engine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pirate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pirateOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pirate" inverseName="pirateShips" inverseEntity="Pirate" syncable="YES"/>
+        <relationship name="shipEngine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Engine" inverseName="belongsToShip" inverseEntity="Engine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Engine" positionX="97" positionY="39" width="128" height="88"/>
+        <element name="Pirate" positionX="-315" positionY="24" width="128" height="88"/>
+        <element name="Ship" positionX="-108" positionY="9" width="128" height="118"/>
+    </elements>
+</model>
