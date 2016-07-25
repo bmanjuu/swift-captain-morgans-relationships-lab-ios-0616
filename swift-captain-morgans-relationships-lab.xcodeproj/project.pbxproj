@@ -19,6 +19,7 @@
 		A4875FEC1D4419C80072BAA0 /* Pirate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4875FE61D4419C80072BAA0 /* Pirate.swift */; };
 		A4875FED1D4419C80072BAA0 /* Ship+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4875FE71D4419C80072BAA0 /* Ship+CoreDataProperties.swift */; };
 		A4875FEE1D4419C80072BAA0 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4875FE81D4419C80072BAA0 /* Ship.swift */; };
+		A4D32F361D46485D00033DAA /* PirateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D32F351D46485D00033DAA /* PirateVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A4875FE61D4419C80072BAA0 /* Pirate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pirate.swift; sourceTree = "<group>"; };
 		A4875FE71D4419C80072BAA0 /* Ship+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ship+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4875FE81D4419C80072BAA0 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		A4D32F351D46485D00033DAA /* PirateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PirateVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				4C45CA8D1D3A9A7F0030A41D /* Main.storyboard */,
 				4C45CA901D3A9A7F0030A41D /* CaptainMorganLab.xcdatamodeld */,
 				A4875FE11D4419590072BAA0 /* DataStore.swift */,
+				A4D32F351D46485D00033DAA /* PirateVC.swift */,
 				1B885D9D1D3FE64B0029DFFC /* Resources */,
 			);
 			path = "swift-captain-morgans-relationships-lab";
@@ -172,6 +175,7 @@
 				A4875FEC1D4419C80072BAA0 /* Pirate.swift in Sources */,
 				4C45CA921D3A9A7F0030A41D /* CaptainMorganLab.xcdatamodeld in Sources */,
 				4C45CA8A1D3A9A7F0030A41D /* AppDelegate.swift in Sources */,
+				A4D32F361D46485D00033DAA /* PirateVC.swift in Sources */,
 				A4875FEB1D4419C80072BAA0 /* Pirate+CoreDataProperties.swift in Sources */,
 				A4875FEE1D4419C80072BAA0 /* Ship.swift in Sources */,
 				A4875FE21D4419590072BAA0 /* DataStore.swift in Sources */,
