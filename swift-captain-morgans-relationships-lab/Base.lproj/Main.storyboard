@@ -107,8 +107,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="cH0-aR-NDs"/>
                     <connections>
+                        <outlet property="pirateName" destination="yyV-6T-Sex" id="yAs-eW-nX6"/>
                         <outlet property="pirateNameLabel" destination="yyV-6T-Sex" id="GKq-a9-Tc9"/>
+                        <outlet property="propulsionType" destination="pM5-Vc-g5y" id="Cea-J5-ooW"/>
                         <outlet property="propulsionTypeLabel" destination="pM5-Vc-g5y" id="oAs-xj-SzZ"/>
+                        <outlet property="shipName" destination="84Z-KN-pLs" id="rCd-Tq-WZo"/>
                         <outlet property="shipNameLabel" destination="84Z-KN-pLs" id="WWU-ON-P1M"/>
                     </connections>
                 </viewController>
@@ -125,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shipCell" textLabel="mjS-3G-Os1" detailTextLabel="ANF-lY-j7k" style="IBUITableViewCellStyleValue1" id="Cah-3b-Z8g" customClass="S">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shipCell" textLabel="mjS-3G-Os1" detailTextLabel="ANF-lY-j7k" style="IBUITableViewCellStyleValue1" id="Cah-3b-Z8g">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cah-3b-Z8g" id="i9W-AF-UN7">

@@ -64,9 +64,9 @@ class ShipVC: UITableViewController {
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             // Get the new view controller using segue.destinationViewController.
             // Pass the selected object to the new view controller.
-            let destinationVC = segue.destinationViewController as? TableViewController
-            let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
-            destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
-            
+            let destinationVC = segue.destinationViewController as? ShipDetailVC
+            let currentShip = managedShipObjects[tableView.indexPathForSelectedRow!.row]
+            destinationVC?.selectedShip = currentShip
+            destinationVC?.navigationItem.title = "\(currentShip.name!) Information"
         }
 }
