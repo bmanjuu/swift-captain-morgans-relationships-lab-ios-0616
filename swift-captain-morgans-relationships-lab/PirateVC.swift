@@ -68,14 +68,15 @@ class PirateVC: UITableViewController {
         return cell
     }
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        let destinationVC = segue.destinationViewController as? TableViewController
-//        let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
-//        destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destinationViewController as? ShipVC
+        let selectedPirate = dataStore.pirates[tableView.indexPathForSelectedRow!.row]
+        destinationVC?.managedShipObjects = selectedPirate.pirateShips!.allObjects as! [Ship]
+        // destinationVC?.navigationItem.title = "\(selectedPirate)'s Ships"
+        
+    }
 
 }
 

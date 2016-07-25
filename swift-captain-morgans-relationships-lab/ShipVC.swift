@@ -13,6 +13,7 @@ class ShipVC: UITableViewController {
     
     let dataStore = DataStore.sharedDataStore
     var managedShipObjects : [Ship] = []
+    // var selectedPirate : Pirate
     
     
     override func viewDidLoad() {
@@ -53,27 +54,17 @@ class ShipVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("shipCell", forIndexPath: indexPath)
         
-        let eachRecipient = dataStore.pirateShips[indexPath.row]
-        cell.textLabel?.text = eachRecipient.name
-        
-        let numberOfShips = eachRecipient.pirateShips?.count
-        //numberOfShips is an optional!!
-        
-        if let numberOfShips = numberOfShips {
-            cell.detailTextLabel?.text = String(numberOfShips)
-        }
-        
-        // Configure the cell...
+        cell.textLabel?.text = String(managedShipObjects[indexPath.row])
         
         return cell
 }
     
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            // Get the new view controller using segue.destinationViewController.
-            // Pass the selected object to the new view controller.
-            let destinationVC = segue.destinationViewController as? TableViewController
-            let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
-            destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
-            
-        }
+//        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//            // Get the new view controller using segue.destinationViewController.
+//            // Pass the selected object to the new view controller.
+//            let destinationVC = segue.destinationViewController as? TableViewController
+//            let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
+//            destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
+//            
+//        }
 }
