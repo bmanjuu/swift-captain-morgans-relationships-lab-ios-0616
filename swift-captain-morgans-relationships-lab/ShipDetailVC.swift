@@ -13,17 +13,25 @@ class ShipDetailVC: UIViewController {
     var selectedShip : Ship?
     let dataStore = DataStore.sharedDataStore
     
+    @IBOutlet weak var propulsionTypeLabel: UILabel!
+    @IBOutlet weak var shipNameLabel: UILabel!
+    @IBOutlet weak var pirateNameLabel: UILabel!
     @IBOutlet weak var propulsionType: UILabel!
     @IBOutlet weak var pirateName: UILabel!
     @IBOutlet weak var shipName: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataStore.fetchData()
-        
-        shipName.text = selectedShip?.name
-        pirateName.text = selectedShip?.pirateOwner?.name
-        propulsionType.text = selectedShip?.engine
+        if let selectedShip = selectedShip {
+            
+            shipName.text = selectedShip.name
+            pirateName.text = selectedShip.pirateOwner?.name
+            propulsionType.text = selectedShip.engine
+            
+        }
         
         
         
@@ -40,8 +48,6 @@ class ShipDetailVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(true)
-        
-        dataStore.fetchData()
         
     }
 

@@ -108,11 +108,11 @@
                     <navigationItem key="navigationItem" id="cH0-aR-NDs"/>
                     <connections>
                         <outlet property="pirateName" destination="yyV-6T-Sex" id="yAs-eW-nX6"/>
-                        <outlet property="pirateNameLabel" destination="yyV-6T-Sex" id="GKq-a9-Tc9"/>
+                        <outlet property="pirateNameLabel" destination="Agt-vr-geO" id="3tk-hI-B04"/>
                         <outlet property="propulsionType" destination="pM5-Vc-g5y" id="Cea-J5-ooW"/>
-                        <outlet property="propulsionTypeLabel" destination="pM5-Vc-g5y" id="oAs-xj-SzZ"/>
+                        <outlet property="propulsionTypeLabel" destination="meE-Ci-K0A" id="a9C-GG-1tF"/>
                         <outlet property="shipName" destination="84Z-KN-pLs" id="rCd-Tq-WZo"/>
-                        <outlet property="shipNameLabel" destination="84Z-KN-pLs" id="WWU-ON-P1M"/>
+                        <outlet property="shipNameLabel" destination="YmT-W1-MIz" id="5qA-1d-0JJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYG-5C-0S1" userLabel="First Responder" sceneMemberID="firstResponder"/>

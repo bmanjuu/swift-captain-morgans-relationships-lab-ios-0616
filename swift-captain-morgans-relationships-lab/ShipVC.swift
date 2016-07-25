@@ -23,15 +23,14 @@ class ShipVC: UITableViewController {
         
     }
     
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(true)
-        
-        dataStore.fetchData()
-        tableView.reloadData()
-        
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        
+//        super.viewWillAppear(true)
+//        
+//        dataStore.fetchData()
+//        tableView.reloadData()
+//        
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

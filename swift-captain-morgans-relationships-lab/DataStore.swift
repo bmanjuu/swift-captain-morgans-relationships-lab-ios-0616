@@ -68,21 +68,37 @@ class DataStore {
         
         let shipOne : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipOne.name = "The Black Pearl"
-        shipOne.engine = "sail"
         shipOne.pirate = pirateOne.name
+        
         
         let shipTwo : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipTwo.name = "HMS Interceptor"
-        shipTwo.engine = "gas"
         shipOne.pirate = pirateOne.name
+        
         
         let shipThree : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipThree.name = "The Flying Dutchman"
-        shipThree.engine = "electric"
         shipThree.pirate = pirateTwo.name
+        
         
         pirateOne.pirateShips = [shipOne, shipTwo]
         pirateTwo.pirateShips = [shipThree]
+        
+        let engineOne : Engine = NSEntityDescription.insertNewObjectForEntityForName("Engine", inManagedObjectContext: managedObjectContext) as! Engine
+        engineOne.propulsion = "Sail"
+        engineOne.belongsToShip = shipOne
+        
+        let engineTwo : Engine = NSEntityDescription.insertNewObjectForEntityForName("Engine", inManagedObjectContext: managedObjectContext) as! Engine
+        engineTwo.propulsion = "Electric"
+        engineTwo.belongsToShip = shipTwo
+        
+        let engineThree : Engine = NSEntityDescription.insertNewObjectForEntityForName("Engine", inManagedObjectContext: managedObjectContext) as! Engine
+        engineThree.propulsion = "Gas"
+        engineThree.belongsToShip = shipThree
+        
+        shipOne.engine = engineOne.propulsion
+        shipTwo.engine = engineTwo.propulsion
+        shipThree.engine = engineThree.propulsion
         
         
         saveContext()
