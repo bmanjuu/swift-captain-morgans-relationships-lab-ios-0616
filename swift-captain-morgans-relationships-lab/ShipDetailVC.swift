@@ -29,7 +29,7 @@ class ShipDetailVC: UIViewController {
             
             shipName.text = selectedShip.name
             pirateName.text = selectedShip.pirateOwner?.name
-            propulsionType.text = selectedShip.engine
+            propulsionType.text = selectedShip.shipEngine?.propulsion
             
         }
         

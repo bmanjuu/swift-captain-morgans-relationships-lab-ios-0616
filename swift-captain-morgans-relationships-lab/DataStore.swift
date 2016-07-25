@@ -68,21 +68,21 @@ class DataStore {
         
         let shipOne : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipOne.name = "The Black Pearl"
-        shipOne.pirate = pirateOne.name
+        shipOne.pirateOwner = pirateOne
         
         
         let shipTwo : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipTwo.name = "HMS Interceptor"
-        shipOne.pirate = pirateOne.name
+        shipOne.pirateOwner = pirateOne
         
         
         let shipThree : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipThree.name = "The Flying Dutchman"
-        shipThree.pirate = pirateTwo.name
+        shipThree.pirateOwner = pirateTwo
         
         
-        pirateOne.pirateShips = [shipOne, shipTwo]
-        pirateTwo.pirateShips = [shipThree]
+//        pirateOne.pirateShips = [shipOne, shipTwo]
+//        pirateTwo.pirateShips = [shipThree]
         
         let engineOne : Engine = NSEntityDescription.insertNewObjectForEntityForName("Engine", inManagedObjectContext: managedObjectContext) as! Engine
         engineOne.propulsion = "Sail"
