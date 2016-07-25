@@ -1,5 +1,5 @@
 //
-//  PirateVC.swift
+//  ShipVC.swift
 //  swift-captain-morgans-relationships-lab
 //
 //  Created by Betty Fung on 7/25/16.
@@ -9,12 +9,12 @@
 import UIKit
 import CoreData
 
-class PirateVC: UITableViewController {
+class ShipVC: UITableViewController {
     
     let dataStore = DataStore.sharedDataStore
-    var managedPirateObjects : [Pirate] = []
+    var managedShipObjects : [Ship] = []
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,18 +46,18 @@ class PirateVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataStore.pirates.count
+        return dataStore.pirateShips.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("pirateCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("shipCell", forIndexPath: indexPath)
         
-        let eachRecipient = dataStore.pirates[indexPath.row]
+        let eachRecipient = dataStore.pirateShips[indexPath.row]
         cell.textLabel?.text = eachRecipient.name
         
         let numberOfShips = eachRecipient.pirateShips?.count
-        //numberOfShips is an optional!! 
+        //numberOfShips is an optional!!
         
         if let numberOfShips = numberOfShips {
             cell.detailTextLabel?.text = String(numberOfShips)
@@ -66,17 +66,14 @@ class PirateVC: UITableViewController {
         // Configure the cell...
         
         return cell
-    }
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        let destinationVC = segue.destinationViewController as? TableViewController
-//        let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
-//        destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
-//        
-//    }
-
 }
-
-
+    
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            // Get the new view controller using segue.destinationViewController.
+            // Pass the selected object to the new view controller.
+            let destinationVC = segue.destinationViewController as? TableViewController
+            let selectedRecipient = dataStore.recipients[tableView.indexPathForSelectedRow!.row]
+            destinationVC?.managedMessageObjects = selectedRecipient.messages?.allObjects as! [Message]
+            
+        }
+}
