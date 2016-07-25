@@ -66,15 +66,23 @@ class DataStore {
         let pirateTwo : Pirate = NSEntityDescription.insertNewObjectForEntityForName("Pirate", inManagedObjectContext: managedObjectContext) as! Pirate
         pirateTwo.name = "Davy Jones"
         
+        let shipOne : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
+        shipOne.name = "The Black Pearl"
+        shipOne.engine = "sail"
+        shipOne.pirate = pirateOne.name
         
-        let shipOne : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
-        shipOne.name = "Black Pearl"
-        
-        let shipTwo : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
+        let shipTwo : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipTwo.name = "HMS Interceptor"
+        shipTwo.engine = "gas"
+        shipOne.pirate = pirateOne.name
         
-        let shipThree : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext)
+        let shipThree : Ship = NSEntityDescription.insertNewObjectForEntityForName("Ship", inManagedObjectContext: managedObjectContext) as! Ship
         shipThree.name = "The Flying Dutchman"
+        shipThree.engine = "electric"
+        shipThree.pirate = pirateTwo.name
+        
+        pirateOne.pirateShips = [shipOne, shipTwo]
+        pirateTwo.pirateShips = [shipThree]
         
         
         saveContext()
