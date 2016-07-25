@@ -47,14 +47,16 @@ class ShipVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataStore.pirateShips.count
+        return managedShipObjects.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("shipCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = String(managedShipObjects[indexPath.row])
+        let eachShip = managedShipObjects[indexPath.row] 
+        cell.textLabel?.text = eachShip.name
+        cell.detailTextLabel?.text = ""
         
         return cell
 }

@@ -74,7 +74,8 @@ class PirateVC: UITableViewController {
         let destinationVC = segue.destinationViewController as? ShipVC
         let selectedPirate = dataStore.pirates[tableView.indexPathForSelectedRow!.row]
         destinationVC?.managedShipObjects = selectedPirate.pirateShips!.allObjects as! [Ship]
-        // destinationVC?.navigationItem.title = "\(selectedPirate)'s Ships"
+        destinationVC?.navigationItem.title = "\(selectedPirate.name!)'s Ships"
+        //selectedPirate.name needs to be force unwrapped b/c otherwise, it would say Optional("name here") etc 
         
     }
 
