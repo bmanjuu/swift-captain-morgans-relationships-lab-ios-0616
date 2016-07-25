@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="572" y="64"/>
         </scene>
-        <!--Ship Detail View Controller-->
+        <!--Ship DetailVC-->
         <scene sceneID="om3-T8-5Ag">
             <objects>
-                <viewController id="89Y-7r-3Pi" customClass="ShipDetailViewController" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="89Y-7r-3Pi" customClass="ShipDetailVC" customModule="swift_captain_morgans_relationships_lab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8vs-2W-EXA"/>
                         <viewControllerLayoutGuide type="bottom" id="WK3-Yj-zhl"/>
